@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Christopher Nolan Space Gallery</title>
+  <link rel="stylesheet" href="Nolans.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Orbitron&display=swap" rel="stylesheet">
+  <!-- 🔭 Site Header + Nav -->
+<header class="main-header">
+  <h1 class="glow-title">Nolan's artistic work Gallery</h1>
+  <nav class="navbar">
+    <a href="#video">🎥 Opening</a>
+    <a href="#quiz">❓ Quiz</a>
+    <a href="#gallery">🎞️ Gallery</a>
+    <a href="#weather">☁️ Weather</a>
+   
+  </nav>
+ 
+</header>
+
+</head>
+<body>
+  <br>
+
+  <!-- 🎥 Cinematic Opening Video -->
+ <section id="video" class="video-section">
+  <div class="video-frame">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/bK6ldnjE3Y0?autoplay=1&mute=1" frameborder="20" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ❓ Nolan Oscar Quiz -->
+  <section id="quiz" class="quiz-section">
+    <h2>🎓 How many Oscars has Christopher Nolan won?</h2>
+    <div class="quiz-options">
+      <button onclick="checkAnswer(1)">1</button>
+      <button onclick="checkAnswer(3)">3</button>
+      <button onclick="checkAnswer(2)">2</button>
+      <button onclick="checkAnswer(6)">6</button>
+    </div>
+    <p id="quiz-result"></p>
+  </section>
+
+  <!-- 🎠 Movie Carousel -->
+  <section id="gallery" class="carousel-section">
+  <h2>🎬 Nolan's Masterpieces</h2>
+    <div class="carousel">
+      <img id="carousel-image" src="img/imgnolan1.jpg" alt="Nolan Film">
+    </div>
+  </section>
+
+  <!-- 🌦️ Weather API -->
+ <section id="weather" class="weather-section">
+   <h2>☁️ Live Weather</h2>
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button onclick="getWeather()">Check Weather</button>
+    <p id="weather-result"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 G. Satya Kishore | Christopher Nolan Tribute</p>
+  </footer>
+
+  <script src="Nolans.js"></script>
+</body>
+</html>
