@@ -1,20 +1,21 @@
 // 🎠 Movie Carousel
 const images = [
-  { src: "img/imgnolan1.jpg", info: "Oppenheimer (2023) - The story of J. Robert Oppenheimer, the father of the atomic bomb." },
-  { src: "img/imgnolan2.jpg", info: "Tenet (2020) - A CIA agent must stop an organization from using technology to alter time." },
-  { src: "img/imgnolan3.jpg", info: "Dunkirk (2017) -  The story of the evacuation of Allied soldiers during World War II." },
-  { src: "img/imgnolan4.jpg", info: "Interstellar (2014) -A crew embarks on a perilous journey through a wormhole in space to find a new home for humanity." },
-  { src: "img/imgnolan5.jpg", info: "The Dark Knight Rises (2012) -  Bruce Wayne must make a final stand against Bane and his chaos." },
-  { src: "img/imgnolan6.jpg", info: "The Dark Knight (2008) -  Batman faces the Joker in a battle of wills." },
-  { src: "img/imgnolan7.jpg", info: "Inception (2010) - A thief who can steal secrets from people's dreams is hired to perform the impossible task: to implant an idea." },
-  { src: "img/imgnolan8.jpg", info: "Batman Begins (2005) - Bruce Wayne returns to Gotham City to fight crime." }
+  { src: "imgnolan1.jpg", info: "Oppenheimer (2023) - The story of J. Robert Oppenheimer, the father of the atomic bomb." },
+  { src: "imgnolan2.jpg", info: "Tenet (2020) - A CIA agent must stop an organization from using technology to alter time." },
+  { src: "imgnolan3.jpg", info: "Dunkirk (2017) - The story of the evacuation of Allied soldiers during World War II." },
+  { src: "imgnolan4.jpg", info: "Interstellar (2014) - A crew embarks on a perilous journey through a wormhole in space to find a new home for humanity." },
+  { src: "imgnolan5.jpg", info: "The Dark Knight Rises (2012) - Bruce Wayne must make a final stand against Bane and his chaos." },
+  { src: "imgnolan6.jpg", info: "The Dark Knight (2008) - Batman faces the Joker in a battle of wills." },
+  { src: "imgnolan7.jpg", info: "Inception (2010) - A thief who can steal secrets from people's dreams is hired to perform the impossible task: to implant an idea." },
+  { src: "imgnolan8.jpg", info: "Batman Begins (2005) - Bruce Wayne returns to Gotham City to fight crime." }
 ];
 
 let index = 0;
 
 function showImage(i) {
-  document.getElementById("carousel-image").src = images[i].src;
-  document.getElementById("carousel-image").onclick = () => {
+  const img = document.getElementById("carousel-image");
+  img.src = images[i].src;
+  img.onclick = () => {
     alert(images[i].info);
   };
 }
@@ -24,7 +25,10 @@ function nextImage() {
   showImage(index);
 }
 
+// Auto rotate every 3 seconds
 setInterval(nextImage, 3000);
+
+// Load first image
 window.onload = () => showImage(index);
 
 // ❓ Quiz Logic
@@ -44,7 +48,7 @@ function getWeather() {
   fetch(`https://goweather.herokuapp.com/weather/${city}`)
     .then(res => res.json())
     .then(data => {
-      document.getElementById("weather-result").innerText = 
+      document.getElementById("weather-result").innerText =
         `Temperature: ${data.temperature}, Wind: ${data.wind}, Description: ${data.description}`;
     })
     .catch(() => {
